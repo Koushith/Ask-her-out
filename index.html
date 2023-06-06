@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+   
+    <div class="container mx-auto">
+       
+        <h1 class="text-2xl" id="init">Can I Ask You Something?</h1>
+        <button onclick="startQuestions()" id="que">Sure, Ask Away!</button>
+
+        <div id="questions" style="display: none;">
+            <h1 class="text-2xl mt-8">Question 1:</h1>
+            <p>Do you believe in love at first sight?</p>
+            <button onclick="answerYes()">Yes</button>
+            <button onclick="answerNo()" class="no">No</button>
+        </div>
+
+        <div id="message" style="display: none;">
+           
+            <p id="messageText"></p>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas">
+   </canvas>
+
+
+    <footer class="text-center mt-8">
+        Made with ❤️ by <a href="http://www.koushith.com">Koushith</a>
+    </footer>
+   
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+    <script src="script.js" ></script>
+</body>
+</html>
