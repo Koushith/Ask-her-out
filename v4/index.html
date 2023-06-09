@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crush QA Tester - Developer Love App</title>
+    <script>
+        function askCrush() {
+            var crushName = document.getElementById('crushName').value;
+            var crushQA = document.getElementById('crushQA').value;
+
+            // Display a funny twist question
+            var question = "Hey " + crushName + ", as a QA tester, can you debug my love life? (Yes/No)";
+            var response = prompt(question);
+
+            if (response !== null) {
+                response = response.toLowerCase().trim();
+
+                // Check the response
+                if (response === 'yes') {
+                    // Continue with a series of questions leading to a 'yes' answer
+                    var question2 = "Great! Can you test if you and I have a compatibility score of 100%? (Yes/No)";
+                    var response2 = prompt(question2);
+
+                    if (response2 !== null) {
+                        response2 = response2.toLowerCase().trim();
+
+                        if (response2 === 'yes') {
+                            // Final 'yes' answer
+                            alert("Awesome! You've passed all the tests. Will you go on a date with me?");
+                        } else {
+                            // Continue the series of questions
+                            var question3 = "No worries. How about we conduct a code review of our love connection? (Yes/No)";
+                            var response3 = prompt(question3);
+
+                            if (response3 !== null) {
+                                response3 = response3.toLowerCase().trim();
+
+                                if (response3 === 'yes') {
+                                    // Final 'yes' answer
+                                    alert("Perfect! Let's merge our hearts and create something beautiful together!");
+                                } else {
+                                    // Final 'no' answer
+                                    alert("No problem. Thanks for being a good sport. Keep testing those bugs, and maybe our paths will cross again.");
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    // Final 'no' answer
+                    alert("That's okay. I guess my love life doesn't need debugging after all. Keep up the great work as a QA tester!");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Crush QA Tester - Developer Love App</h1>
+    <p>Enter your crush's name:</p>
+    <input type="text" id="crushName" placeholder="Crush's Name">
+    <br><br>
+    <p>Enter your crush's QA expertise:</p>
+    <input type="text" id="crushQA" placeholder="QA Expertise">
+    <br><br>
+    <button onclick="askCrush()">Ask Crush Out</button>
+</body>
+</html>

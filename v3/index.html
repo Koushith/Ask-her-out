@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developer Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    h1 {
+      font-size: 30px;
+      color: #333;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey there, can I be your developer date?</h1>
+  <button id="startButton">Let's find out!</button>
+  
+  <script>
+    const phrases = [
+      "You must be a keyboard, because you're just my type.",
+      "Are you a coding angel? Because you've got me under your spell.",
+      "Are you a software update? Because you make my heart skip a beat.",
+      "Is your name CSS? Because you're looking so stylish today.",
+      "Do you believe in love at first website?",
+      "Are you a JavaScript function? Because you complete me.",
+      "Is your beauty a floating-point exception? It's out of this world!",
+      "Are you a database query? Because I've been searching for you everywhere.",
+      "Can I be the 404 to your heart's missing piece?",
+      "Are you an API? Because I want to connect with you."
+    ];
+    
+    function getRandomPhrase() {
+      const randomIndex = Math.floor(Math.random() * phrases.length);
+      return phrases[randomIndex];
+    }
+    
+    function displayRandomPhrase() {
+      const phrase = getRandomPhrase();
+      const phraseElement = document.createElement("h1");
+      phraseElement.textContent = phrase;
+      document.body.appendChild(phraseElement);
+    }
+    
+    document.getElementById("startButton").addEventListener("click", function() {
+      this.style.display = "none";
+      displayRandomPhrase();
+    });
+  </script>
+</body>
+</html>

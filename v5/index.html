@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developer's Crush</title>
+  <script type="text/javascript">
+    // Define the list of questions and the index to keep track of the current question
+    var questions = [
+      "If you were a bug, would you be a software bug or a ladybug?",
+      "Can you help me debug my love life? Yes or no?",
+      "If you were a function, would you be called 'isCrushingOnMe()' or 'isFriendzoningMe()'?",
+      "Do you believe in love at first compile? Yes or no?",
+      "If we were variables, would you be my constant?",
+      "Can I be the git to your hub? Yes or no?",
+      "Do you promise not to return undefined? Yes or no?",
+      "If we were a software project, would you be my QA tester and I your dedicated developer?",
+      "Are you the CSS to my HTML? Yes or no?",
+      "Can you help me refactor my heart to include you? Yes or no?",
+    ];
+    var currentIndex = 0;
+
+    // Define a function to display the current question and handle the user's answer
+    function askQuestion() {
+      var container = document.getElementById("container");
+      container.innerHTML = ""; // Clear previous content
+
+      var question = questions[currentIndex];
+      var label = document.createElement("label");
+      label.innerHTML = question;
+      container.appendChild(label);
+
+      var textbox = document.createElement("input");
+      textbox.type = "text";
+      container.appendChild(textbox);
+
+      container.appendChild(document.createElement("br"));
+
+      var button = document.createElement("button");
+      button.innerHTML = "Next";
+      button.onclick = function () {
+        var answer = textbox.value.toLowerCase().trim();
+
+        if (answer === "yes") {
+          alert("Congratulations! The answer is YES! Let's embark on a creative journey together!");
+        } else {
+          currentIndex++;
+          if (currentIndex < questions.length) {
+            askQuestion();
+          } else {
+            alert("Oops! Seems like we encountered an error. Let's try again!");
+            currentIndex = 0;
+            askQuestion();
+          }
+        }
+      };
+
+      container.appendChild(button);
+    }
+  </script>
+</head>
+<body>
+  <h1>Developer's Crush</h1>
+  <div id="container"></div>
+  <button onclick="askQuestion()">Ask Your Crush Out</button>
+</body>
+</html>

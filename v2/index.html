@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developer Date Invitation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome, Developer!</h1>
+  
+  <button onclick="startInvitation()">Ask Her Out</button>
+  
+  <script>
+    function startInvitation() {
+      document.body.innerHTML = `
+        <h1>Hey there!</h1>
+        <p>As a developer, I believe in optimizing every aspect of life, including romance. So, let's run a compatibility test and see if we make a perfect match!</p>
+        <button onclick="question1()">Begin</button>
+      `;
+    }
+    
+    function question1() {
+      document.body.innerHTML = `
+        <h1>Question 1</h1>
+        <p>Do you prefer tabs or spaces for indentation?</p>
+        <button onclick="question2('tabs')">Tabs</button>
+        <button onclick="question2('spaces')">Spaces</button>
+      `;
+    }
+    
+    function question2(indentationStyle) {
+      document.body.innerHTML = `
+        <h1>Question 2</h1>
+        <p>What's your favorite programming language?</p>
+        <input type="text" id="programmingLanguage">
+        <button onclick="question3('${indentationStyle}')">Next</button>
+      `;
+    }
+    
+    function question3(indentationStyle) {
+      const programmingLanguage = document.getElementById('programmingLanguage').value;
+      
+      document.body.innerHTML = `
+        <h1>Question 3</h1>
+        <p>Are you up for an adventure in the <strong>${programmingLanguage}</strong> world with ${indentationStyle} indentation?</p>
+        <button onclick="showResult(true)">Absolutely!</button>
+        <button onclick="showResult(false)">I'm not sure...</button>
+      `;
+    }
+    
+    function showResult(isMatch) {
+      if (isMatch) {
+        document.body.innerHTML = `
+          <h1>Congratulations!</h1>
+          <p>You and I seem to be a perfect coding match! Let's go on a real-life adventure and write our own love story. Are you in?</p>
+          <button onclick="window.location.reload()">Yes, I'm in!</button>
+        `;
+      } else {
+        document.body.innerHTML = `
+          <h1>That's okay!</h1>
+          <p>Not everyone can handle our developer romance. Let's stay friends and keep coding together!</p>
+          <button onclick="window.location.reload()">Let's code as friends!</button>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
