@@ -5,9 +5,9 @@ function startQuestions() {
   function answerYes() {
     document.getElementById("questions").style.display = "none";
       document.getElementById("que").style.display = "none";
-      document.getElementById("init").innerText = "YEY YEY 🎉🎉🎉";
+      document.getElementById("init").innerText = "YEA ";
     document.getElementById("message").style.display = "block";
-    document.getElementById("messageText").innerText = "I believe in love at first sight too! How about we go on a date and see if it's true?";
+    document.getElementById("messageText").innerText = "Let's create new memories, make some love and cherish those moments";
     showConfetti()
 }
   
@@ -16,7 +16,7 @@ function startQuestions() {
     document.getElementById("que").style.display = "none";
     document.getElementById("init").innerText = "YEY YEY 🎉🎉🎉";
     document.getElementById("message").style.display = "block";
-    document.getElementById("messageText").innerText = "No worries, love takes time. But can we spend some time together and see if something beautiful blossoms?";
+    document.getElementById("messageText").innerText = "No worries, love takes time. But can we spend some time together?";
     showConfetti()
 
 }
